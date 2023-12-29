@@ -4,6 +4,7 @@ from .models import Book
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
 from .forms import CommentForm
+# from django.utils.translation import gettext as _
 
 
 class BookListview(generic.ListView):

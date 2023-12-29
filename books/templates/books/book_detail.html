@@ -1,5 +1,6 @@
 {% extends '_base.html' %}
 {% load crispy_forms_tags %}
+{% load i18n %}
 {% block page_title %}جزئيات کتاب{{ book.title }}{% endblock %}
 
 {% block content %}
@@ -22,7 +23,7 @@
                             <h5 class="small my-1"><span class="text-muted">نویسنده: </span>{{ book.author }}</h5>
                             <h5 class="small my-1"><span class="text-muted">مترجم: </span>الهام خرسندی</h5>
                             <h5 class="small my-1"><span class="text-muted">انتشارات: </span>هوزمزد</h5>
-                            <a class="text-decoration-none" href="{% url 'book_update' book.id %}">ویرایش</a>
+                            <a class="text-decoration-none" href="{% url 'book_update' book.id %}">{% trans 'edit' %}</a>
                             |
                             <a class="text-decoration-none" href="{% url 'book_delete' book.id %}">حذف</a>
                         </div>

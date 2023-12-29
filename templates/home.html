@@ -3,11 +3,11 @@
 {% block page_title %}Home Page{% endblock %}
 
 {% block content %}
-    <h1>home page</h1>
+    <h1>شما با موفقیت وارد حسابتان شده اید</h1>
     {% if user.is_authenticated %}
-        <p>welcome {{ user.username }} | <a href="{% url 'logout'%}">Log Out</a></p>
+        <p>welcome {{ user.username }} | <a href="{% url 'logout'%}">خروج از حساب کاربری</a></p>
     {% else%}
-        <a href="{% url 'login' %}">Log in</a> | <a href="{% url 'signup' %}">Sign Up</a>
+        <a href="{% url 'login' %}">ورود به حساب</a> | <a href="{% url 'signup' %}">ثبت نام</a>
     {% endif %}
 
 {% endblock content %}
