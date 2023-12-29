@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Book ,Comments
+from .models import Book, Comment
 
 
 class CommentAdmin(admin.ModelAdmin):
@@ -8,5 +8,5 @@ class CommentAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Book)
-admin.site.register(Comments, CommentAdmin)
+admin.site.register(Comment, CommentAdmin)
 
