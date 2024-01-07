@@ -3,7 +3,7 @@
 {% block page_title %}Home Page{% endblock %}
 
 {% block content %}
-    <h1> شما با موفقیت وارد حسابتان شده اید</h1>
+    <h1>شما با موفقیت وارد حسابتان شده اید</h1>
     {% if user.is_authenticated %}
         <p>welcome {{ user.username }} | <a href="{% url 'logout'%}">خروج از حساب کاربری</a></p>
     {% else%}
