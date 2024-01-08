@@ -4,9 +4,19 @@ from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 
 
+class Author(models.Model):
+    name = models.CharField(max_length=200)
+    description = models.TextField()
+    pic = models.ImageField(upload_to='covers/', blank=True)
+
+    def __str__(self):
+        return self.name
+
+
 class Book(models.Model):
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     title = models.CharField(max_length=200, verbose_name=_('title'))
-    author = models.CharField(max_length=200, verbose_name=_('author'))
+    author = models.ForeignKey(Author, on_delete=models.CASCADE, verbose_name=_('author'))
     description = models.TextField(verbose_name=_('description'))
     price = models.DecimalField(max_digits=6, decimal_places=3, verbose_name=_('price'))
     cover = models.ImageField(upload_to='covers/', blank=True, verbose_name=_('cover'))
@@ -28,3 +38,9 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.text
+
+
+
+
+
+
