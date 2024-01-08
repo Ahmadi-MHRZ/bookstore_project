@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import generic
-from .models import Book, Author
+from .models import Book, Author, Translator
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
 from .forms import CommentForm
@@ -74,3 +74,8 @@ class AuthorDetail(generic.DetailView):
     model = Author
     template_name = 'books/author_detail.html'
     # context_object_name = 'books'
+
+
+class TranslatorDetail(generic.DetailView):
+    model = Translator
+    template_name = 'books/translator_detail.html'
