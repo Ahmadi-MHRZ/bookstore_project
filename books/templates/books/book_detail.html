@@ -30,8 +30,10 @@
                                 <h5 class="small my-1"><span
                                         class="text-muted">مترجم: </span> {{ book.translator.name }}</h5>
                             </a>
-
-                            <h5 class="small my-1"><span class="text-muted">انتشارات: </span>هوزمزد</h5>
+                            <a class="text-decoration-none" href="{{ book.publisher.get_absolute_url }}">
+                                <h5 class="small my-1"><span
+                                        class="text-muted">انتشارات: </span>{{ book.publisher.name }}</h5>
+                            </a>
                             {% if book.user == user %}
                                 <a class="text-decoration-none"
                                    href="{% url 'book_update' book.id %}">{% trans 'edit' %}</a>
